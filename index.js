@@ -10,3 +10,16 @@ const studentSchema = new mongoose.Schema({
 });
 
 const Student = mongoose.model('Student', studentSchema);
+
+const student = new Student({
+    name: 'Gosho',
+    age: 21,
+});
+
+student.save();
+Student.find({name: 'Gosho'})
+.then(() => console.log(student));
+    
+
+
+   
