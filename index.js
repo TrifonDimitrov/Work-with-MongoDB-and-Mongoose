@@ -1,15 +1,4 @@
-const { MongoClient } = require('mongodb');
+const mongoose = require('mongoose');
 
-const conectionString = `mongodb://localhost:27017`;
-const client = new MongoClient(conectionString);
-
-async function run() {
-    const db = client.db('admin');
-    const collection = db.collection('students');
-
-    const students = await collection.find().toArray();
-
-    console.log(students);
-}
-
-run();
+mongoose.connect(`mongodb://localhost:27017/admin`)
+.then(() => console.log('DB connected successfuly'));
