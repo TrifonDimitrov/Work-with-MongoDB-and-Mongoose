@@ -8,3 +8,5 @@ const studentSchema = new mongoose.Schema({
     age: Number,
 
 });
+
+const Student = mongoose.model('Student', studentSchema);
